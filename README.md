@@ -73,7 +73,7 @@ We can now generate an output file that has aligned the OpenLR sections to our t
 ```typescript
 const translatedObject = translate(inputObject);
 ```
-The translated output is not reproduced here for brevity, but an example can be viewed at the end of this document [here](https://github.com/warerebel/openlr-translate-sections/edit/main/README.md#translation-output)
+The translated output is not reproduced here for brevity, but an example can be viewed at the end of this document [here](https://github.com/warerebel/openlr-translate-sections#translation-output)
 
 Finally we can apply a harmonic average on the translated object to generate a distinct output value for the each link.
 ```typescript
