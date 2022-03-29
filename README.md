@@ -32,7 +32,40 @@ Here we have an OpenLR reference describing a path 2000m length. The data provid
 We describe this depicted relationship with a `translationInput` object:
 
 ```typescript
-const translationInput: translationInput = {
-
+const inputObject: translationInput = {
+    "cost": 2000, // Total OpenLR section length - For reference only, is not used by the module
+    "openLR": "xyz", // OpenLR reference - For reference only, is not used by the module
+    "fromModel": [
+        {
+            "linkid": "Section1",
+            "length": 800,
+            "value": 70
+        },
+        {
+            "linkid": "Section2",
+            "length": 1200,
+            "value": 110
+        }
+    ],
+    "toModel": [
+        {
+            "linkid": "{abcd}",
+            "length": 600,
+            "link": [],
+            "endChainage": []
+        },
+        {
+            "linkid": "{efgh}",
+            "length": 650,
+            "link": [],
+            "endChainage": []
+        },
+        {
+            "linkid": "{ijkl}",
+            "length": 750,
+            "link": [],
+            "endChainage": []
+        }
+    ]
 } 
 ```
