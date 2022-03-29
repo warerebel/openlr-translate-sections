@@ -7,4 +7,4 @@ OpenLR is a dynamic location reference standard to enable systems to exchange lo
 When an overall OpenLR reference is broken down further into linear sections, this library assists in assigning those sections to the mapping model the OpenLR references are decoded to.
 
 # Example
-![demo_slide](/openlr-translate-sections/assets/slide1.png)
+![demo_slide](https://warerebel.github.io/openlr-translate-sections/docs/assets/images/slide1.png)
