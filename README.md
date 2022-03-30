@@ -116,7 +116,11 @@ The `validateInput` function should be called with our input model and our toler
 
 ```typescsript
 // Validate that our inputObject is well formed and that the total input and output lengths are within 5% of each other
-const validatedInput = validateInput(inputObject, 5);
+try{
+    validateInput(inputObject, 5);
+} catch(error) {
+    console.log(error.message); // If out of tolerance - The toModel length varies outside of tolerance from the fromModel length
+}
 ```
 
 # Translation Output
