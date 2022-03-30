@@ -1,11 +1,11 @@
-import { translationInput, translationOutput} from "./models"
+import { translationInput, translationOutput} from "./models";
 
 export function harmonicAverage(input: translationInput): translationOutput{
     const lookup = buildLookup(input);
     const output: translationOutput = {items: [], cost: input.cost, openLR: input.openLR};
     for(const link of input.toModel){
         const preTopLine = link.endChainage.map((element, index, array) => {
-            return index > 0 ? (element - array[index -1]!) * Math.pow(lookup.get(link.link[index]), -1) : element * Math.pow(lookup.get(link.link[index]), -1);
+            return index > 0 ? (element - array[index -1]) * Math.pow(lookup.get(link.link[index]), -1) : element * Math.pow(lookup.get(link.link[index]), -1);
         });
         const topLine = preTopLine.reduce((prev, cur) => {return prev + cur;} );
         const average = parseFloat(Math.pow((topLine / link.length), -1).toFixed(1));
