@@ -24,7 +24,7 @@ npm install openlr-translate-sections
 # Import the module
 For commonjs:
 ```javascript
-const { validateInput, translate, baselineLength, harmonicAverage, translationInput } = require("openlr-translate-sections");
+const { validateInput, translate, baselineLength, harmonicAverage } = require("openlr-translate-sections");
 ```
 For typescript:
 ```typescript
@@ -39,38 +39,38 @@ We describe this depicted relationship with a `translationInput` object:
 
 ```typescript
 const inputObject: translationInput = {
-    "cost": 2000, // Total OpenLR section length - For reference only, is not used by the module
-    "openLR": "xyz", // OpenLR reference - For reference only, is not used by the module
-    "fromModel": [
+    cost: 2000, // Total OpenLR section length - For reference only, is not used by the module
+    openLR: "xyz", // OpenLR reference - For reference only, is not used by the module
+    fromModel: [
         {
-            "linkid": "Section1",
-            "length": 800,
-            "value": 70
+            linkid: "Section1",
+            length: 800,
+            value: 70
         },
         {
-            "linkid": "Section2",
-            "length": 1200,
-            "value": 110
+            linkid: "Section2",
+            length: 1200,
+            value: 110
         }
     ],
-    "toModel": [
+    toModel: [
         {
-            "linkid": "{abcd}",
-            "length": 600,
-            "link": [],
-            "endChainage": []
+            linkid: "{abcd}",
+            length: 600,
+            link: [],
+            endChainage: []
         },
         {
-            "linkid": "{efgh}",
-            "length": 650,
-            "link": [],
-            "endChainage": []
+            linkid: "{efgh}",
+            length: 650,
+            link: [],
+            endChainage: []
         },
         {
-            "linkid": "{ijkl}",
-            "length": 750,
-            "link": [],
-            "endChainage": []
+            linkid: "{ijkl}",
+            length: 750,
+            link: [],
+            endChainage: []
         }
     ]
 } 
@@ -103,7 +103,7 @@ The final `translatedWithValues` output will be:
         {
             "linkid": "{efgh}",
             "length": 650,
-            "value": 97.7
+            "value": 93.6
         },
         {
             "linkid": "{ijkl}",
@@ -127,7 +127,8 @@ try{
     const adjustedInput = baselineLength(inputobject); // We now know for certain the object is ready for translation
     const translatedOuput = translate(adjustedInput);
 } catch(error) {
-    console.log(error.message); // If out of tolerance - "The toModel length varies outside of tolerance from the fromModel length"
+    if(error instanceOf Error)
+        console.log(error.message); // If out of tolerance - "The toModel length varies outside of tolerance from the fromModel length"
 }
 ```
 

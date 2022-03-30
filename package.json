@@ -1,12 +1,15 @@
 {
   "name": "openlr-translate-sections",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Translate sections from OpenLR linear references to a target mapping network model",
-  "keywords": ["openlr", "transport models"],
+  "keywords": [
+    "openlr",
+    "transport models"
+  ],
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "lint": "eslint **/*.ts", 
+    "lint": "eslint **/*.ts",
     "prepare": "tsc",
     "build": "tsc",
     "test": "mocha -r ts-node/register **/*.spec.ts",
