@@ -1,0 +1,41 @@
+{
+    "cost": 2000,
+    "openLR": "xyz",
+    "fromModel": [
+        {
+            "linkid": "1234",
+            "length": 800,
+            "value": 80
+        },
+        {
+            "linkid": "4567",
+            "length": 200,
+            "value": 60
+        },
+        {
+            "linkid": "8910",
+            "length": 1000,
+            "value": 100
+        }
+    ],
+    "toModel": [
+        {
+            "linkid": "{abcd}",
+            "length": 600,
+            "link": [],
+            "endChainage": []
+        },
+        {
+            "linkid": "{efgh}",
+            "length": 650,
+            "link": [],
+            "endChainage": []
+        },
+        {
+            "linkid": "{ijkl}",
+            "length": 750,
+            "link": [],
+            "endChainage": []
+        }
+    ]
+}

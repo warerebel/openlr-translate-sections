@@ -1,0 +1,36 @@
+{
+    "cost": 2000,
+    "openLR": "xyz",
+    "fromModel": [
+        {
+            "linkid": "1234",
+            "length": 800,
+            "value": 100
+        },
+        {
+            "linkid": "5678",
+            "length": 1100,
+            "value": 100
+        }
+    ],
+    "toModel": [
+        {
+            "linkid": "{abcd}",
+            "length": 600,
+            "link": [],
+            "endChainage": []
+        },
+        {
+            "linkid": "{efgh}",
+            "length": 650,
+            "link": [],
+            "endChainage": []
+        },
+        {
+            "linkid": "{ijkl}",
+            "length": 750,
+            "link": [],
+            "endChainage": []
+        }
+    ]
+}

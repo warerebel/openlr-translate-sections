@@ -1,0 +1,21 @@
+{
+    "cost": 2000,
+    "openLR": "xyz",
+    "items": [
+        {
+            "linkid": "{abcd}",
+            "length": 600,
+            "value": 80.0
+        },
+        {
+            "linkid": "{efgh}",
+            "length": 650,
+            "value": 81.5
+        },
+        {
+            "linkid": "{ijkl}",
+            "length": 750,
+            "value": 100
+        }
+    ]
+}
