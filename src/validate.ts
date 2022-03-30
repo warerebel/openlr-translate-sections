@@ -17,7 +17,7 @@ export function validate(input: translationInput): ValidationError[]{
 }
 
 export function checkInputModelArrays(input: translationInput): void{
-    for(let toModelItem in input.toModel){
+    for(const toModelItem in input.toModel){
         const chainageLinkResult = input.toModel[toModelItem].endChainage.length === input.toModel[toModelItem].link.length;
         const linkResult = input.toModel[toModelItem].link.length <= input.fromModel.length;
         if(!chainageLinkResult)

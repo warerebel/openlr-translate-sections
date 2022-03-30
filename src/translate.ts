@@ -24,7 +24,7 @@ export function translate(links: translationInput): translationInput{
             links.toModel[currentOutputLink].endChainage.push(links.toModel[currentOutputLink].length);
             links.toModel[currentOutputLink].link.push(links.fromModel[currentInputLink].linkid);
             currentInputLinkLocation += links.toModel[currentOutputLink].length - currentOutputLinkLocation;
-            currentOutputLocation += links.toModel[currentOutputLink].length - currentOutputLinkLocation
+            currentOutputLocation += links.toModel[currentOutputLink].length - currentOutputLinkLocation;
             currentOutputLinkLocation = 0;
             currentOutputLink++;
             if(links.fromModel[currentInputLink].length === currentInputLinkLocation){
@@ -41,4 +41,4 @@ export function translate(links: translationInput): translationInput{
         }
     }
     return links;
-};
+}
