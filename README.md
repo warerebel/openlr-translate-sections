@@ -69,15 +69,19 @@ const inputObject: translationInput = {
     ]
 } 
 ```
+We need to ensure that the input and output models are the precise same length and we use the `baslineLength` function to adjust the lengths to match if needed.
+```typescript
+const adjustedObject = baselineLength(inputObject);
+```
 We can now generate an output file that has aligned the OpenLR sections to our target model.
 ```typescript
-const translatedObject = translate(inputObject);
+const translatedObject = translate(adjustedObject);
 ```
 The translated output is not reproduced here for brevity, but an example can be viewed at the end of this document [here](https://github.com/warerebel/openlr-translate-sections#translation-output)
 
 Finally we can apply a harmonic average on the translated object to generate a distinct output value for the each link.
 ```typescript
-const translatedWithValues = harmonicAverage(translatedObject)
+const translatedWithValues = harmonicAverage(translatedObject);
 ```
 The final `translatedWithValues` output will be:
 ```json
@@ -103,8 +107,14 @@ The final `translatedWithValues` output will be:
     ]
 }
 ```
-
-
+# Other utilities
+There are requirements which the `inputObject` must satisfy for the translation to be successult. The target mapping links should be whole links matching the OpenLR section, i.e. no partial links. As the OpenLR specfiication decodes against nodes the result of a decode is expected to always be a whole set of links.
+The translation object expects the inputs to be the precise same length, we can adjust the lengths with the `baselineLength` function. Prior to calling baslineLength we can check that the lengths of our input and output models are within an acceptable tolerance for us. This also validates that the model input is well formed.
+The `validateInput` function should be called with our input model and our tolerance for differing lengths between the two models. The tolerance value is a percentage difference we accept in the lengths
+```typescsript
+// Validate that our inputObject is well formed and that the total input and output lengths are within 5% of each other
+const validatedInput = validateInput(inputObject, 5);
+```
 
 # Translation Output
 The output of the translate function in our example is as follows:
