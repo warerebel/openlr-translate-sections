@@ -10,7 +10,7 @@
     "prepare": "tsc",
     "build": "tsc",
     "test": "mocha -r ts-node/register **/*.spec.ts",
-    "coverage": "nyc mocha -r ts-node/register -r source-map-support/register test/**/*.spec.ts"
+    "coverage": "nyc --reporter=lcov --reporter=text mocha -r ts-node/register -r source-map-support/register test/**/*.spec.ts"
   },
   "author": "Chris Lount <chris.lount@warerebel.com>",
   "license": "GPL-3.0",
