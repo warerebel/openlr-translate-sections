@@ -1,5 +1,7 @@
 openlr-translate-sections
 =========================
+[![Coverage Status](https://coveralls.io/repos/github/warerebel/openlr-translate-sections/badge.svg?branch=main)](https://coveralls.io/github/warerebel/openlr-translate-sections?branch=main)
+
 Translate sections from OpenLR linear references to a target mapping network model
 
 # Introduction
