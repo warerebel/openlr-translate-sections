@@ -1,5 +1,7 @@
+openlr-translate-sections
+=========================
 Translate sections from OpenLR linear references to a target mapping network model
-==================================================================================
+
 # Introduction
 
 OpenLR is a dynamic location reference standard to enable systems to exchange location information in a map-agnostic manner. For further info see [OpenLR association](http://http://www.openlr.org/)
@@ -77,7 +79,7 @@ We can now generate an output file that has aligned the OpenLR sections to our t
 ```typescript
 const translatedObject = translate(adjustedObject);
 ```
-The translated output is not reproduced here for brevity, but an example can be viewed at the end of this document [here](https://github.com/warerebel/openlr-translate-sections#translation-output)
+The translated output is not reproduced here for brevity, but an example can be viewed at the end of this document [here](#translation-output). This output contains relationships between the OpenLR sections and the target model and can have useful applications of its own prior to averaging out the data.
 
 Finally we can apply a harmonic average on the translated object to generate a distinct output value for each link.
 ```typescript
@@ -119,7 +121,7 @@ The `validateInput` function should be called with our input model and our toler
 try{
     validateInput(inputObject, 5);
 } catch(error) {
-    console.log(error.message); // If out of tolerance - The toModel length varies outside of tolerance from the fromModel length
+    console.log(error.message); // If out of tolerance - "The toModel length varies outside of tolerance from the fromModel length"
 }
 ```
 

@@ -1,7 +1,8 @@
 {
-  "name": "model-translator",
+  "name": "openlr-translate-sections",
   "version": "1.0.0",
-  "description": "Translate locations between different network models based on common alignment points",
+  "description": "Translate sections from OpenLR linear references to a target mapping network model",
+  "keywords": ["openlr", "transport models"],
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
