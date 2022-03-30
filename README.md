@@ -1,6 +1,8 @@
 openlr-translate-sections
 =========================
 [![Coverage Status](https://coveralls.io/repos/github/warerebel/openlr-translate-sections/badge.svg?branch=main)](https://coveralls.io/github/warerebel/openlr-translate-sections?branch=main)
+![CodeQL Analysis](https://github.com/warerebel/openlr-translate-sections/actions/workflows/codeql-analysis.yml/badge.svg)
+![Build and test](https://github.com/warerebel/openlr-translate-sections/actions/workflows/node.js.yml/badge.svg)
 
 Translate sections from OpenLR linear references to a target mapping network model
 
@@ -122,6 +124,8 @@ The `validateInput` function should be called with our input model and our toler
 // Validate that our inputObject is well formed and that the total input and output lengths are within 5% of each other
 try{
     validateInput(inputObject, 5);
+    const adjustedInput = baselineLength(inputobject); // We now know for certain the object is ready for translation
+    const translatedOuput = translate(adjustedInput);
 } catch(error) {
     console.log(error.message); // If out of tolerance - "The toModel length varies outside of tolerance from the fromModel length"
 }
